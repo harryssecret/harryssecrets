@@ -1,0 +1,47 @@
+---
+import Navigation from "./Navigation.astro";
+---
+
+<nav>
+  <div>
+    <a href="/">
+      <img
+        src="https://avatars.githubusercontent.com/u/37616962?v=4"
+        alt="my github avatar"
+      />
+      <p>harryssecret</p>
+    </a>
+  </div>
+  <Navigation />
+</nav>
+
+<style>
+  nav {
+    padding: 2em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Source Code Pro", monospace;
+    color: var(--secondary-color);
+  }
+  img {
+    width: 44px;
+    height: 44px;
+    border-radius: 100%;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  nav div a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  nav > div > p {
+    margin-left: 1rem;
+  }
+
+  nav a {
+    text-decoration: none;
+  }
+</style>

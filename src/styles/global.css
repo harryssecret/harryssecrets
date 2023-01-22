@@ -1,0 +1,31 @@
+:root {
+  --primary-color: #eaddff;
+  --secondary-color: #625b71;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--primary-color);
+  margin: 0 auto;
+  max-width: 80ch;
+}
+
+a {
+  color: var(--secondary-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--secondary-color);
+}
+
+h1 {
+  font-size: 40px;
+}
