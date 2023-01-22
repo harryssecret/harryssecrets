@@ -2,6 +2,21 @@
 import Layout from "@layouts/Layout.astro";
 
 const pageTitle = "Accueil";
+const allPosts = await Astro.glob("./posts/*.md");
 ---
 
-<Layout pageTitle={pageTitle} />
+<Layout pageTitle={pageTitle}>
+  <p>
+    Bonjour! Je suis Harry, étudiant en informatique, et bienvenue sur ma page
+    perso:)
+  </p>
+  <section>
+    <h2>Derniers articles</h2>
+  </section>
+</Layout>
+
+<style>
+  section {
+    margin-top: 2rem;
+  }
+</style>
