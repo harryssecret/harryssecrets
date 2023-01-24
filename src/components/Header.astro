@@ -1,26 +1,38 @@
 ---
+import HamburgerMenu from "./HamburgerMenu.astro";
 import Navigation from "./Navigation.astro";
 import ProfilePicture from "./ProfilePicture.astro";
 ---
 
 <nav>
-  <div>
-    <a href="/">
-      <ProfilePicture />
-      <p>harryssecret</p>
-    </a>
+  <div class="bar">
+    <div>
+      <a href="/" aria-label="Retour à l'accueil">
+        <ProfilePicture />
+        <p>harryssecret</p>
+      </a>
+    </div>
+    <HamburgerMenu />
   </div>
   <Navigation />
 </nav>
 
 <style>
   nav {
+    width: 100%;
     padding: 2em 0;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-flow: column;
     font-family: "Source Code Pro", monospace;
     color: var(--secondary-color);
+  }
+
+  .bar {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   nav div a {

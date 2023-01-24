@@ -19,6 +19,10 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="harryssecrets est un blog permettant de partager moult connaissances et expériences."
+    />
     <title>{pageTitle} - harryssecret's site</title>
   </head>
   <body>
@@ -28,5 +32,8 @@ const { pageTitle } = Astro.props;
       <slot />
     </div>
     <Footer />
+    <script>
+      import "../scripts/menu";
+    </script>
   </body>
 </html>

@@ -41,3 +41,27 @@ h1 {
   font-size: 40px;
   margin-bottom: 16px;
 }
+
+.toggled {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 636px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    gap: 34px;
+  }
+
+  #burger-menu {
+    display: none;
+  }
+}
