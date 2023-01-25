@@ -8,11 +8,15 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "playwright test"
   },
   "dependencies": {
     "@fontsource/montserrat": "^4.5.14",
     "@fontsource/source-code-pro": "^4.5.14",
     "astro": "^2.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.30.0"
   }
 }
