@@ -1,0 +1,55 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image: { src: string; alt: string };
+  url: string;
+  tags: string[];
+}
+
+const { title, image, tags, description, url } = Astro.props;
+---
+
+<a href={url}>
+  <article>
+    <img src={image.src} alt={image.alt} />
+    <div class="content">
+      <h3>{title}</h3>
+      <div class="tags">
+        {tags.map((tag: string) => <span>{tag}</span>)}
+      </div>
+      <p>{description}</p>
+    </div>
+  </article>
+</a>
+
+<style>
+  :root {
+    --tag-color: #f6edff;
+  }
+  a {
+    text-decoration: none;
+    background-color: #fff;
+    border-radius: 4px;
+  }
+
+  article img {
+    width: 100%;
+    height: 141px;
+    object-fit: cover;
+  }
+
+  article div.content {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  span {
+    display: inline-block;
+    background-color: var(--tag-color);
+    padding: 10px 16px;
+    border-radius: 50px;
+  }
+</style>

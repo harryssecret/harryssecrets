@@ -1,8 +1,12 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import ArticleCard from "@components/ArticleCard.astro";
+import type { Frontmatter } from "src/types/Frontmatter";
 
 const pageTitle = "Accueil";
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = await Astro.glob<Frontmatter>("./posts/*.md");
+const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
+console.log(nonDraftPosts);
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -12,11 +16,32 @@ const allPosts = await Astro.glob("./posts/*.md");
   </p>
   <section>
     <h2>Derniers articles</h2>
+    <article>
+      {
+        nonDraftPosts.map((post) => {
+          return (
+            <ArticleCard
+              title={post.frontmatter.title}
+              url={post.url}
+              description={post.frontmatter.description}
+              image={post.frontmatter.image}
+              tags={post.frontmatter.tags}
+            />
+          );
+        })
+      }
+    </article>
   </section>
 </Layout>
 
 <style>
-  section {
-    margin-top: 2rem;
+  section > h2 {
+    margin: 2rem 0;
+  }
+
+  section > article {
+    display: grid;
+    grid: repeat(2, 1fr) / repeat(2, 1fr);
+    grid-gap: 1rem;
   }
 </style>
