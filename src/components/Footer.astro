@@ -1,8 +1,16 @@
 ---
+import { socialSites } from "src/infos";
 ---
 
 <footer>
-  <p>tous droits réservés, harry, 2023</p>
+  <p>tous droits réservés, 2023</p>
+  <section class="social">
+    {
+      socialSites.map(({ username, site, url }) => (
+        <a href={username}>{site}</a>
+      ))
+    }
+  </section>
 </footer>
 
 <style>
@@ -11,7 +19,13 @@
     border-top: solid 3px #000;
     margin-top: 1rem;
     padding: 2rem 0;
-    text-align: center;
     flex-shrink: 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  section.social {
+    display: flex;
+    gap: 4px;
   }
 </style>
