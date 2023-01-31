@@ -1,7 +1,22 @@
 ---
+import ArticleCard from "@components/ArticleCard.astro";
 import Layout from "@layouts/Layout.astro";
 
 const pageTitle = "Articles";
+const allPosts = await Astro.glob("./posts/*.md");
+const nonDraftPosts = allPosts.filter((p) => p.frontmatter.draft !== true);
 ---
 
-<Layout pageTitle={pageTitle} />
+<Layout pageTitle={pageTitle}>
+  {
+    nonDraftPosts.map((post) => (
+      <ArticleCard
+        title={post.frontmatter.title}
+        url={post.url || "#"}
+        description={post.frontmatter.description}
+        image={post.frontmatter.image}
+        tags={post.frontmatter.tags}
+      />
+    ))
+  }
+</Layout>
