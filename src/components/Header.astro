@@ -1,4 +1,5 @@
 ---
+import { siteName } from "src/infos";
 import HamburgerMenu from "./HamburgerMenu.astro";
 import Navigation from "./Navigation.astro";
 import ProfilePicture from "./ProfilePicture.astro";
@@ -9,7 +10,7 @@ import ProfilePicture from "./ProfilePicture.astro";
     <div>
       <a href="/" aria-label="Retour à l'accueil">
         <ProfilePicture />
-        <p>harryssecret</p>
+        <p>{siteName}</p>
       </a>
     </div>
     <HamburgerMenu />

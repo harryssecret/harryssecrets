@@ -6,13 +6,11 @@ import type { Frontmatter } from "src/types/Frontmatter";
 const pageTitle = "Accueil";
 const allPosts = await Astro.glob<Frontmatter>("./posts/*.md");
 const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
-console.log(nonDraftPosts);
 ---
 
 <Layout pageTitle={pageTitle}>
   <p>
-    Bonjour! Je suis Harry, étudiant en informatique, et bienvenue sur ma page
-    perso:)
+    Bonjour! Je suis étudiant en informatique, et bienvenue sur ma page perso:)
   </p>
   <section>
     <h2>Derniers articles</h2>
@@ -22,7 +20,7 @@ console.log(nonDraftPosts);
           return (
             <ArticleCard
               title={post.frontmatter.title}
-              url={post.url}
+              url={post.url || "#"}
               description={post.frontmatter.description}
               image={post.frontmatter.image}
               tags={post.frontmatter.tags}
