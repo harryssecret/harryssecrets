@@ -8,9 +8,10 @@ import Footer from "@components/Footer.astro";
 
 export interface Props {
   pageTitle: string;
+  showTitle?: boolean;
 }
 
-const { pageTitle } = Astro.props;
+const { pageTitle, showTitle } = Astro.props;
 ---
 
 <html lang="fr">
@@ -28,7 +29,7 @@ const { pageTitle } = Astro.props;
   <body>
     <Header />
     <div class="content">
-      <h1>{pageTitle}</h1>
+      {showTitle && <h1>{pageTitle}</h1>}
       <slot />
     </div>
     <Footer />
@@ -37,3 +38,5 @@ const { pageTitle } = Astro.props;
     </script>
   </body>
 </html>
+
+<style></style>

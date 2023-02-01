@@ -8,7 +8,7 @@ const allPosts = await Astro.glob<Frontmatter>("./posts/*.md");
 const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
 ---
 
-<Layout pageTitle={pageTitle}>
+<Layout pageTitle={pageTitle} showTitle={true}>
   <p>
     Bonjour! Je suis étudiant en informatique, et bienvenue sur ma page perso:)
   </p>
@@ -33,13 +33,22 @@ const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
 </Layout>
 
 <style>
-  section > h2 {
-    margin: 2rem 0;
+  section {
+    margin-top: 2rem;
+  }
+  section h2 {
+    margin: 1rem 0;
   }
 
   section > article {
     display: grid;
-    grid: repeat(2, 1fr) / repeat(2, 1fr);
+    grid: repeat(1, 1fr) / repeat(1, 1fr);
     grid-gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    section > article {
+      grid: repeat(1, 1fr) / repeat(2, 1fr);
+    }
   }
 </style>

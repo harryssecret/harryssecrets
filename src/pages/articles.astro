@@ -7,7 +7,7 @@ const allPosts = await Astro.glob("./posts/*.md");
 const nonDraftPosts = allPosts.filter((p) => p.frontmatter.draft !== true);
 ---
 
-<Layout pageTitle={pageTitle}>
+<Layout pageTitle={pageTitle} showTitle={true}>
   {
     nonDraftPosts.map((post) => (
       <ArticleCard

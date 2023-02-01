@@ -48,6 +48,13 @@ h1 {
   justify-content: center;
 }
 
+.tags span {
+  display: inline-block;
+  background-color: var(--tag-color);
+  padding: 10px 16px;
+  border-radius: 50px;
+}
+
 @media (min-width: 636px) {
   nav {
     display: flex;
