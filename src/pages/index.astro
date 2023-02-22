@@ -12,9 +12,9 @@ const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
   <p>
     Bonjour! Je suis étudiant en informatique, et bienvenue sur ma page perso:)
   </p>
-  <section>
-    <h2>Derniers articles</h2>
-    <article>
+  <section class="mt-8">
+    <h2 class="my-4">Derniers articles</h2>
+    <article class="grid grid-cols-1 md:grid-cols-2">
       {
         nonDraftPosts.map((post) => {
           return (
@@ -31,24 +31,3 @@ const nonDraftPosts = allPosts.filter((post) => !post.frontmatter.draft);
     </article>
   </section>
 </Layout>
-
-<style>
-  section {
-    margin-top: 2rem;
-  }
-  section h2 {
-    margin: 1rem 0;
-  }
-
-  section > article {
-    display: grid;
-    grid: repeat(1, 1fr) / repeat(1, 1fr);
-    grid-gap: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    section > article {
-      grid: repeat(1, 1fr) / repeat(2, 1fr);
-    }
-  }
-</style>

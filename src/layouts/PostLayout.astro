@@ -6,46 +6,24 @@ const { description, title, tags, draft, image } = frontmatter as Frontmatter;
 ---
 
 <Layout pageTitle={title} showTitle={false}>
-  <header>
-    <h1>{title}</h1>
-    <p>{description}</p>
-  </header>
-  <section id="tags">
-    <h2>tags</h2>
-    <ul class="tags">
-      {tags.map((tag) => <span>{tag}</span>)}
-    </ul>
-  </section>
-  <section id="post">
-    <slot />
-  </section>
+  <div class="prose lg:prose-xl">
+    <header>
+      <h1>{title}</h1>
+    </header>
+    <section id="tags" class="flex gap-4 flex-col not-prose mb-4">
+      <h2 class="text-lg font-normal">tags</h2>
+      <ul class="tags">
+        {tags.map((tag) => <span>{tag}</span>)}
+      </ul>
+    </section>
+    <section id="post" class="prose lg:prose-xl">
+      <slot />
+    </section>
+  </div>
 </Layout>
 
 <style>
-  section#tags {
-    display: flex;
-    gap: 6px;
-    flex-direction: column;
-  }
-
-  section#tags h2 {
-    font-size: large;
-    font-weight: 400;
-  }
-
   ul.tags span {
     background-color: white;
-  }
-
-  header h1 {
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    margin-bottom: 16px;
-  }
-
-  section#post {
-    margin-top: 16px;
   }
 </style>
