@@ -6,7 +6,7 @@ const { description, title, tags, draft, image } = frontmatter as Frontmatter;
 ---
 
 <Layout pageTitle={title} showTitle={false}>
-  <div class="prose lg:prose-xl">
+  <div class="prose max-w-none">
     <header>
       <h1>{title}</h1>
     </header>
@@ -16,7 +16,7 @@ const { description, title, tags, draft, image } = frontmatter as Frontmatter;
         {tags.map((tag) => <span>{tag}</span>)}
       </ul>
     </section>
-    <section id="post" class="prose lg:prose-xl">
+    <section id="post" class="prose max-w-none">
       <slot />
     </section>
   </div>
