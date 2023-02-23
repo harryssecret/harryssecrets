@@ -8,15 +8,17 @@ const nonDraftPosts = allPosts.filter((p) => p.frontmatter.draft !== true);
 ---
 
 <Layout pageTitle={pageTitle} showTitle={true}>
-  {
-    nonDraftPosts.map((post) => (
-      <ArticleCard
-        title={post.frontmatter.title}
-        url={post.url || "#"}
-        description={post.frontmatter.description}
-        image={post.frontmatter.image}
-        tags={post.frontmatter.tags}
-      />
-    ))
-  }
+  <div class="grid grid-cols-1 md:grid-cols-2">
+    {
+      nonDraftPosts.map((post) => (
+        <ArticleCard
+          title={post.frontmatter.title}
+          url={post.url || "#"}
+          description={post.frontmatter.description}
+          image={post.frontmatter.image}
+          tags={post.frontmatter.tags}
+        />
+      ))
+    }
+  </div>
 </Layout>

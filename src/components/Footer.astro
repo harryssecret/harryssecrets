@@ -4,7 +4,7 @@ import { socialSites } from "src/infos";
 
 <footer>
   <p>tous droits réservés, 2023</p>
-  <section class="social">
+  <section class="social flex gap-4">
     {
       socialSites.map(({ username, site, url }) => (
         <a href={username}>{site}</a>
@@ -22,10 +22,5 @@ import { socialSites } from "src/infos";
     flex-shrink: 0;
     display: flex;
     justify-content: space-between;
-  }
-
-  section.social {
-    display: flex;
-    gap: 4px;
   }
 </style>

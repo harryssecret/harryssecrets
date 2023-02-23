@@ -16,7 +16,7 @@ const { description, title, tags, draft, image } = frontmatter as Frontmatter;
         {tags.map((tag) => <span>{tag}</span>)}
       </ul>
     </section>
-    <section id="post" class="prose max-w-none">
+    <section id="post">
       <slot />
     </section>
   </div>
